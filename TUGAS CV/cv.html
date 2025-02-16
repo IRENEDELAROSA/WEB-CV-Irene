@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV-IRENE</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-size: small;
+        }
+        .container {
+            display: flex;
+            width: 750px;
+            height: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex-direction: row;
+        }
+        .left {
+            flex: 1;
+            background-color: #99b59c; /* Warna bagian kiri */
+            padding: 20px;
+            color: white;
+        }
+        .right {
+            flex: 3;
+            background-color: #fbf7f6; /* Warna bagian kanan */
+            padding: 20px;
+            color: rgb(6, 5, 5);
+        }
+        .header {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 1px solid #fff;
+            float: none;
+            top: 1%;
+            position: relative;
+            margin-left: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            margin-top: 1px;
+        }
+        .header img {
+            max-width: 100%; /* Memastikan gambar responsif */
+            height: 100%; /* Mempertahankan rasio aspek */
+            object-fit: cover; /* Memastikan gambar tidak terdistorsi */
+            border-radius: 50%;
+        }
+        .header h1 {
+            margin: 10;
+            font-size: 24px;
+            color: #123603;
+        }
+        .section-title {
+            color: #123603;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .skills ul, .education ul, .experience ul {
+            list-style: none;
+            padding: 0;
+        }
+        .skills ul li, .education ul li, .experience ul li {
+            margin-bottom: 5px;
+        }
+        .skills ul li span, .education ul li span, .experience ul li span {
+            display: inline-block;
+            width: 150px;
+        }
+        .fa {
+            padding: 2px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .fa-linkedin {
+            /* background: #264650; */
+            color: white;
+        }
+        .fa-instagram {
+            /* background: #ad4660; */
+            color: white;
+        }
+        .fa-github { 
+            /* background: #fff; */
+            color: rgb(14, 1, 1);
+        }
+         .section-title1 {
+            color: #123603;
+            margin-bottom: 10px;
+            cursor: pointer;
+         }
+            
+             .redirect-text {
+                cursor: pointer;
+                color: #123603;
+                margin-bottom: 10px;
+             }
+             a {
+                color: #fff;
+                margin-bottom: 10px;
+                
+             }
+        .hidden-image {
+            display: none; /* Gambar disembunyikan secara default */
+            margin-top: 20px;
+        }
+        .clickable-text {
+            cursor: pointer; /* Ubah kursor menjadi pointer saat dihover */
+            color: black; 
+            text-decoration: underline #e9e9eb; /* Tambahkan garis bawah pada teks */
+        }
+        .hidden-image2 {
+            display: none; /* Gambar disembunyikan secara default */
+            margin-top: 20px;
+        }
+        .clickable-text2 {
+            cursor: pointer; /* Ubah kursor menjadi pointer saat dihover */
+            color: #fff; 
+            text-decoration: underline #116ae7; /* Tambahkan garis bawah pada teks */
+        }
+        .hidden-image3 {
+            display: none; /* Gambar disembunyikan secara default */
+            margin-top: 20px;
+        }
+        .clickable-text3 {
+            cursor: pointer; /* Ubah kursor menjadi pointer saat dihover */
+            color: #fff; 
+            text-decoration: underline #116ae7; /* Tambahkan garis bawah pada teks */
+        }
+        .hidden-image4 {
+            display: none; /* Gambar disembunyikan secara default */
+            margin-top: 20px;
+        }
+        .clickable-text4 {
+            cursor: pointer; /* Ubah kursor menjadi pointer saat dihover */
+            color: #fff; 
+            text-decoration: underline #116ae7; /* Tambahkan garis bawah pada teks */
+        }
+        .hidden-image {
+            display: none; /* Sembunyikan gambar secara default */
+        }
+        #notification {
+            display: none; /* Sembunyikan pemberitahuan secara default */
+            padding: 20px;
+            background-color: #467743; /* Ganti background jadi hitam */
+            color: #fff; /* Ganti font tulisan jadi putih */
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+        }
+        .close-btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            background-color: transparent; /* Background transparan */
+            color: #fff;
+            border: 2px solid #fff; /* Border putih */
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="header">
+                <img src="./my photo.jpg" alt="Profile Picture" style="width: 290px; height: 290px; top: auto;">
+            </div>
+            <div class="section">
+                <h2 class="section-title1" onclick="redirectToPage()">Irene Delarosa Situmorang</h2>
+                <p>I am a student at the Universitas Sumatera Utara majoring in Information Technology. I am interested in the fields of web developer and data science. </p>
+            </div>
+            <div class="section">
+                <h2 class="section-title">Contact</h2>
+                <p><a href="https://wa.me/6282124802629" target="_blank">+6282124802629 </a> </p>
+                <p><a href="mailto:irenesitumorang19@gmail.com" target="_blank">irenesitumorang19@gmail.com</a></p>
+                <p> <a href="https://g.co/kgs/EpSH1pj" target="_blank">JL Berdikari 02, Padang Bulan, Medan</a></p>
+            </div>
+            <div class="section">
+                <h2 class="section-title1" onclick="redirectToPage()">Personal Summary</h2>
+                <p>Tempat/Tanggal Lahir: Lumban Julu / 19 Desember 2006</p>
+                <p>Jenis Kelamin: Perempuan</p>
+                <p>Agama: Kristen</p>
+                <p>Kewarganegaraan: Indonesia</p>
+                <br> <br>
+                <a href="https://www.linkedin.com/in/irene-delarosa-situmorang-35707431a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="fa fa-linkedin"></a>
+                <a href="https://www.instagram.com/iirn3_?igsh=aXVjc2I4NjUyaXdt" target="_blank" class="fa fa-instagram"></a> 
+                <a href="https://github.com/IRENEDELAROSA" target="_blank" class="fa fa-github"></a>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="section">
+                <h2 class="section-title1" onclick="redirectToPage()">About Me</h2>
+                <p>A student with over 5 months of experience in web development. Possesses skills in HTML, CSS, and JavaScript (basic understanding). Results-oriented with the ability to work effectively in a team</p>
+            </div>
+            <div class="section">
+                <h2 class="section-title1" onclick="redirectToPage()">Skill</h2>
+                <ul>
+                    <li><span>HTML:</span> ★★★★☆</li>
+                    <li><span>CSS:</span> ★★★★☆</li>
+                    <li><span>Javascript (Basic):</span> ★★☆☆☆</li>
+                    <li><span>Figma (Basic):</span> ★★★☆☆</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2 class="section-title1" onclick="redirectToPage()">Education</h2>
+                <ul>
+                    <li><strong class="redirect-text" onclick="redirectTo('https://www.usu.ac.id/')">Universitas Sumatera Utara</strong> - Technology Information, 2024 - Now</li> 
+                    <li><strong class="redirect-text" onclick="redirectTo1('https://sekolah.data.kemdikbud.go.id/index.php/chome/profil/db6d6d01-5819-4658-a918-59605103e5a6')">SMA Negeri 1 Lumban Julu</strong> - Mathematic and Science, 2021 - 2024</li>
+                    <li><strong class="redirect-text" onclick="redirectTo2('https://annibuku.com/sekolah/174177-smp-negeri-1-lumban-julu')">SMP Negeri 1 Lumban Julu</a></strong>, 2019 - 2021</li>
+                    <li><strong class="redirect-text" onclick="redirectTo3('https://dapo.dikdasmen.go.id/sekolah/09935E368AC984EE8E34')">SD Negeri 173654 Lumban Julu</strong>, 2014 - 2019</li>
+                </ul>
+            </div>
+        
+            <div class="section">
+                <h2 class="section-title1" onclick="redirectToPage()">Achievement and Awards</h2>
+                <ul>
+                    <li>
+                        <p class="clickable-text" onclick="showImage('hiddenImage', ['hiddenImage2', 'hiddenImage3', 'hiddenImage4'])">
+                            <b>UI/UX Design with Figma December 2024 - January 2025 </b> Held by PT Ousean Global Digital
+                        </p>
+                    </li>
+                    <li>
+                        <p class="clickable-text" onclick="showImage2('hiddenImage2', ['hiddenImage', 'hiddenImage3', 'hiddenImage4'])">
+                            <b>Gold Medal Mathematics Olympiad (Toba Science Competition 2023)</b> Held by POSI (Pusat Olimpiade Siswa Indonesia)
+                        </p>
+                    </li>
+                    <li>
+                        <p class="clickable-text" onclick="showImage3('hiddenImage3', ['hiddenImage', 'hiddenImage2', 'hiddenImage4'])">
+                            <b>2nd Place in the Indonesian Language Debate Competition (ILDC) at the Toba Regency Level 2023 </b>Held by Branch Office Head.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="clickable-text" onclick="showImage4('hiddenImage4', ['hiddenImage', 'hiddenImage2', 'hiddenImage3'])">
+                            <b>3rd Place in the High School/Middle Vocational School/Equivalent Quiz Competition at the Toba Regency Level 2023</b> Held by PT Indonesia Asahan Aluminium (INALUM)
+                        </p>
+                    </li>
+                </ul>
+                <img id="hiddenImage" class="hidden-image" src="./figma.jpg" alt="Deskripsi Gambar" width="400px" height="300px">
+                <img id="hiddenImage2" class="hidden-image" src="./matholimp.png" alt="Deskripsi Gambar" width="400px" height="300px">
+                <img id="hiddenImage3" class="hidden-image" src="./debate.jpg" alt="Deskripsi Gambar" width="400px" height="300px">
+                <img id="hiddenImage4" class="hidden-image" src="./LCC.jpg" alt="Deskripsi Gambar" width="400px" height="300px">
+            </div>
+
+        </div>
+    </div>
+
+    <div id="notification">
+        apakah anda sudah menekan nama (Irene Delarosa Situmorang)? jangan lupa tekan ya
+        <button class="close-btn" onclick="hideNotification()">OKE</button>
+    </div>
+
+
+    <script>
+        function redirectToPage() {
+            window.location.href = 'home.html'; // Mengarahkan ke link website yang dituju
+        }
+        function redirectTo() {
+            window.location.href = 'https://www.usu.ac.id/'; // Mengarahkan ke link website yang dituju
+        }
+        function redirectTo1() {
+            window.location.href = 'https://sekolah.data.kemdikbud.go.id/index.php/chome/profil/db6d6d01-5819-4658-a918-59605103e5a6'
+           
+        }
+        function redirectTo2() {
+            window.location.href = 'https://annibuku.com/sekolah/174177-smp-negeri-1-lumban-julu'
+        }
+        function redirectTo3() {
+            window.location.href = 'https://dapo.dikdasmen.go.id/sekolah/09935E368AC984EE8E34'
+        }
+        function showImage() {
+            var image = document.getElementById('hiddenImage');
+            if (image.style.display === 'none' || image.style.display === '') {
+                image.style.display = 'block'; // Tampilkan gambar
+            } else {
+                image.style.display = 'none'; // Sembunyikan gambar
+            }
+        }
+        function showImage2() {
+            var image = document.getElementById('hiddenImage2');
+            if (image.style.display === 'none' || image.style.display === '') {
+                image.style.display = 'block'; // Tampilkan gambar
+            } else {
+                image.style.display = 'none'; // Sembunyikan gambar
+            }
+        }
+        function showImage3() {
+            var image = document.getElementById('hiddenImage3');
+            if (image.style.display === 'none' || image.style.display === '') {
+                image.style.display = 'block'; // Tampilkan gambar
+            } else {
+                image.style.display = 'none'; // Sembunyikan gambar
+            }
+        }
+        function showImage4() {
+            var image = document.getElementById('hiddenImage4');
+            if (image.style.display === 'none' || image.style.display === '') {
+                image.style.display = 'block'; // Tampilkan gambar
+            } else {
+                image.style.display = 'none'; // Sembunyikan gambar
+            }
+        }
+
+        window.onload = function() {
+            showNotification();
+        }
+
+        function showNotification() {
+            var notification = document.getElementById('notification');
+            notification.style.display = 'block'; // Tampilkan pemberitahuan
+        }
+
+        function hideNotification() {
+            var notification = document.getElementById('notification');
+            notification.style.display = 'none'; // Sembunyikan pemberitahuan
+        }
+
+    </script>
+</body>
+</html>
